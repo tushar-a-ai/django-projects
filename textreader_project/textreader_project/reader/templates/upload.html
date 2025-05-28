@@ -1,0 +1,21 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Text File</title>
+</head>
+<body>
+    <h2>Upload a .txt file</h2>
+   <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+
+{% if content %}
+    <h3>File Content:</h3>
+    <pre>{{ content }}</pre>
+{% endif %}
+
+</body>
+</html>
